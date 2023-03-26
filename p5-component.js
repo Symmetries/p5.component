@@ -12,6 +12,7 @@ customElements.define("p5-component", class extends HTMLElement {
             * {
               margin: 0;
               padding:0;
+              overflow: hidden;
             }
             canvas {
               display:block;

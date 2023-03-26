@@ -5,7 +5,6 @@ html {
 
 p5-component {
   display: block;
-  outline: 1px solid black;
   width: 50vw;
-  height: 50vw;
+  height: 50vh;
 }
