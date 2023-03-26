@@ -1,4 +1,9 @@
 customElements.define("p5-component", class extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({mode:'open'});
+  }
+  
   async connectedCallback() {
     const src = this.getAttribute("src");
     const res = await fetch(src);
@@ -23,10 +28,10 @@ customElements.define("p5-component", class extends HTMLElement {
       </html>
     `;
     const iframe = document.createElement("iframe");
-    this.appendChild(iframe);
     iframe.style.border = "none";
     iframe.style.width = "100%";
     iframe.style.height = "100%";
     iframe.src = "data:text/html;charset=utf-8," + encodeURIComponent(html);
+    this.shadowRoot.appendChild(iframe);
   }
 });
